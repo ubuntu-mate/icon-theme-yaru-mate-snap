@@ -31,4 +31,4 @@ for PLUG in $(snap connections | grep gtk-common-themes:icon-themes | awk '{prin
 ```
 
 An official snap built with ❤︎ by the Ubuntu MATE team using configuration at
-<https://github.com/ubuntu-mate/gtk-theme-yaru-mate-snap> and the Yaru theme from the upstream project source <https://github.com/ubuntu/yaru>.
+<https://github.com/ubuntu-mate/icon-theme-yaru-mate-snap> and the Yaru theme from the upstream project source <https://github.com/ubuntu/yaru>.

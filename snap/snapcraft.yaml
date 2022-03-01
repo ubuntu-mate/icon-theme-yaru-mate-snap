@@ -1,11 +1,16 @@
 name: icon-theme-yaru-mate
-base: core18
 architectures:
-  - all
+  - build-on: amd64
+    run-on: all
 version: '22.04.1'
 summary: Yaru MATE is the default theme for Ubuntu MATE 21.04 and newer.
 description: |
   Snap of the Yaru MATE icon theme.
+
+# We build against Ubuntu 20.04 packages, but use the "bare" base as
+# we don't want to force installation of a large base snap.
+build-base: core20
+base: bare
 
 grade: stable
 confinement: strict
@@ -23,7 +28,7 @@ parts:
     after:
       - utils
     plugin: dump
-    source: http://de.archive.ubuntu.com/ubuntu/pool/universe/u/ubuntu-mate-artwork/ubuntu-mate-icon-themes_$SNAPCRAFT_PROJECT_VERSION_all.deb
+    source: https://launchpad.net/ubuntu/+archive/primary/+files/ubuntu-mate-icon-themes_$SNAPCRAFT_PROJECT_VERSION_all.deb
     override-build: |
         snapcraftctl build
         mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons

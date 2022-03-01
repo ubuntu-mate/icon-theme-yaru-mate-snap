@@ -28,7 +28,7 @@ parts:
     after:
       - utils
     plugin: dump
-    source: https://launchpad.net/ubuntu/+archive/primary/+files/ubuntu-mate-icon-themes_$SNAPCRAFT_PROJECT_VERSION_all.deb
+    source: "https://github.com/ubuntu-mate/ubuntu-mate-artwork/archive/refs/tags/$SNAPCRAFT_PROJECT_VERSION.tar.gz"
     override-build: |
         snapcraftctl build
         mkdir -p $SNAPCRAFT_PART_INSTALL/share/icons
